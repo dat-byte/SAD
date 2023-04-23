@@ -1,30 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Dropdown from '../components/dropdown/Dropdown';
 
 export const DisplayCustomer = () => {
+  const [selected, setSelected] = useState("Cock")
+  
   return (
-    <div className='home'>
-      <h1>Display Customers</h1>
+    <div>
+      {/* <h1>Display Customers</h1> */}
+      <Dropdown selected={selected} setSelected={setSelected} />
     </div>
   )
 }
 
-export const EditCustomer = () => {
-  return (
-    <div className='home'>
-      <h1>
-        Edit Customer
-      </h1>
-    </div>
-  )
-}
-
-export const AddCustomer = () => {
-  return (
-    <div className='home'>
-      <h1>
-        Add Customer
-      </h1>
-    </div>
-  )
-}
-
+export default DisplayCustomer;

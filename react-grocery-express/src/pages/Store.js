@@ -1,6 +1,8 @@
 import React from 'react'
+import Form from '../components/form/Form'
+import FormData from '../components/form/FormData'
 
-export const DisplayStore = () => {
+const DisplayStore = () => {
   return (
     <div className='home'>
       <h1>Display Store</h1>
@@ -8,23 +10,4 @@ export const DisplayStore = () => {
   )
 }
 
-export const EditStore = () => {
-  return (
-    <div className='home'>
-      <h1>
-        Edit Store
-      </h1>
-    </div>
-  )
-}
-
-export const AddStore = () => {
-  return (
-    <div className='home'>
-      <h1>
-        Add Store
-      </h1>
-    </div>
-  )
-}
-
+export default DisplayStore;
