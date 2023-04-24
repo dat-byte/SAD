@@ -143,6 +143,25 @@ const SidebarData = [
                 icon: <BiIcons.BiTransfer />
             }
         ]
+    },
+    {
+        title: 'Display Coupons',
+        path: '/coupons',
+        icon: <FaIcons.FaProductHunt />,
+        iconOpen: <RiIcons.RiArrowUpSFill />,
+        iconClosed: <RiIcons.RiArrowDownSFill />,
+        subNav: [
+            {
+                title: 'Add Coupons',
+                path: '/coupons/add-coupon',
+                icon: <IoIcons.IoIosAddCircle />
+            },
+            {
+                title: 'Edit Coupon',
+                path: '/coupons/edit-coupon',
+                icon: <AiIcons.AiFillEdit />
+            }
+        ] 
     }
 ] 
 

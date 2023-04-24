@@ -4,7 +4,7 @@ const Checkout = () => {
   return (
     <div className='home'>
       <h1>
-        Checkout
+        Checkout Last thing to do
       </h1>
     </div>
   )

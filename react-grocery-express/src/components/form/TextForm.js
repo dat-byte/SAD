@@ -2,13 +2,25 @@ import React, { useState } from "react";
 import Form from "./Form";
 import FormData from "./FormData";
 import Dropdown from "../dropdown/Dropdown";
+import { useLocation } from "react-router-dom";
 
 const TextForm = ({ title, objectKey, onSubmit }) => {
-  const [values, setValues] = useState(FormData[objectKey].formData);
+  const { state } = useLocation();
+  const [values, setValues] = useState(
+    state ? state : FormData[objectKey].formData
+  );
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     console.log(values);
+    fetch(`/customer/delete/${e.account_id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(values),
+    }).then((response) => {
+      response.ok ? console.log(response.json()) : console.log(response);
+    });
     alert("Saved Info");
   };
 
@@ -38,6 +50,7 @@ const TextForm = ({ title, objectKey, onSubmit }) => {
               key={index}
               name={FormData[objectKey].input[index]}
               onChange={handleFormChange}
+              value={state ? values[FormData[objectKey].input[index]] : ""}
             />
           );
         })}

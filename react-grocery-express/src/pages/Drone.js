@@ -1,41 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import DisplayList from '../components/display/DisplayList'
 
 export const DisplayDrone = () => {
+  const [items, setItems] = useState(['David', 'Trimino', 'was', 'here', 'at o', 'house'])
+  const onDelete = (e) => {
+    // TODO: send customer to server to finalize deletion
+    console.log(items[e])
+  } 
+
   return (
-    <div className='home'>
-      <h1>Display Drone</h1>
-    </div>
+    <DisplayList title={'Display Drones'} items={items} setItems={setItems} editPath={'/drones/edit-drone'} deleteEndpoint={'customers/delete/'} onDelete={onDelete}/>
   )
 }
 
-export const EditDrone = () => {
-  return (
-    <div className='home'>
-      <h1>
-        Edit Drone
-      </h1>
-    </div>
-  )
-}
-
-export const AddDrone = () => {
-  return (
-    <div className='home'>
-      <h1>
-        Add Drone
-      </h1>
-    </div>
-  )
-}
-
-export const SendRefuelingDrone = () => {
-    return (
-      <div className='home'>
-        <h1>
-          Send Refueling Drone
-        </h1>
-      </div>
-    )
-  }
-  
+export default DisplayDrone;
 

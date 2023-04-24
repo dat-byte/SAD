@@ -1,13 +1,17 @@
-import React from 'react'
-import Form from '../components/form/Form'
-import FormData from '../components/form/FormData'
+import React, { useState } from 'react'
+import DisplayList from '../components/display/DisplayList'
 
-const DisplayStore = () => {
+export const DisplayStore = () => {
+  const [items, setItems] = useState(['David', 'Trimino', 'was', 'here', 'at o', 'house'])
+  const onDelete = (e) => {
+    // TODO: send customer to server to finalize deletion
+    console.log(items[e])
+  } 
+
   return (
-    <div className='home'>
-      <h1>Display Store</h1>
-    </div>
+    <DisplayList title={'Display Stores'} items={items} setItems={setItems} editPath={'/stores/edit-store'} deleteEndpoint={'store/delete/'} onDelete={onDelete}/>
   )
 }
 
 export default DisplayStore;
+

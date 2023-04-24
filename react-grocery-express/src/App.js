@@ -3,14 +3,20 @@ import Sidebar from './components/sidebar/Sidebar';
 import Checkout from './pages/Checkout';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DisplayCustomer from './pages/Customer'
-import { DisplayItem, AddItem, EditItem } from './pages/Item'
+import DisplayItem from './pages/Item'
 import DisplayStore from './pages/Store'
 import DisplayEmployee from './pages/Employee'
-import { DisplayDrone, AddDrone, EditDrone, SendRefuelingDrone } from './pages/Drone'
-import { DisplayOrder, AddOrder, EditOrder, TransferOrder, AddItemsToOrder } from './pages/Order'
+import DisplayDrone from './pages/Drone'
+import DisplayOrder from './pages/Order'
 import TextForm from './components/form/TextForm';
+import { useEffect } from 'react';
 
 function App() {
+  // action -> add or edit
+  const onSubmit = (endpoint, data, action, objectKey) => {
+    
+  }
+
   return (
     <Router>
       <Sidebar />
@@ -51,6 +57,10 @@ function App() {
         <Route path="/orders/add-item-to-order" exact element={<TextForm title={'Add To Order'}  objectKey={'add-item-to-order'}/>} />
         <Route path="/orders/transfer-order" exact element={<TextForm title={'Transfer Order'} objectKey={'transfer-order'}/>} />
         
+        {/* ---   Coupons   --- */}
+        <Route path="/coupons" exact element={<DisplayItem />} />
+        <Route path="/coupons/add-coupon" exact element={<TextForm title={'Add Coupon'} objectKey={'coupon'}/>} />
+        <Route path="/coupons/edit-coupon" exact element={<TextForm title={'Edit Coupon'}  objectKey={'coupon'}/>} />
       </Routes>
     </Router>
   );

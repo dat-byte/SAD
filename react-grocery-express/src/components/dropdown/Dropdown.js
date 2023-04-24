@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./DropdownMenu.css";
 import * as RiIcons from "react-icons/ri";
 import styled from "styled-components";
 

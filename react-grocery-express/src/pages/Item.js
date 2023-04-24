@@ -1,31 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+import DisplayList from '../components/display/DisplayList'
 
 export const DisplayItem = () => {
+  const [items, setItems] = useState(['David', 'Trimino', 'was', 'here', 'at o', 'house'])
+  const onDelete = (e) => {
+    // TODO: send customer to server to finalize deletion
+    console.log(items[e])
+  } 
+
   return (
-    <div className='home'>
-      <h1>
-        Display Items
-      </h1>
-    </div>
+    <DisplayList title={'Display Items'} items={items} setItems={setItems} editPath={'/items/edit-item'} deleteEndpoint={'item/delete/'} onDelete={onDelete}/>
   )
 }
 
-export const EditItem = () => {
-  return (
-    <div class='home'>
-      <h1>
-        Edit Item
-      </h1>
-    </div>
-  )
-}
+export default DisplayItem;
 
-export const AddItem = () => {
-  return (
-    <div class='home'>
-      <h1>
-        Add item
-      </h1>
-    </div>
-  )
-}
