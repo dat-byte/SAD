@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import DisplayList from "../components/display/DisplayList";
 import useGetRequest from "../components/api/useGetRequest";
 
