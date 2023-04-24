@@ -11,11 +11,6 @@ import * as BiIcons from 'react-icons/bi'
 
 const SidebarData = [
     {
-        title: 'Checkout',
-        path: '/checkout',
-        icon: <FaIcons.FaShoppingCart />
-    },
-    {
         title: 'Display Customers',
         path: '/customers',
         icon: <MdIcons.MdPeopleAlt />,
@@ -77,20 +72,6 @@ const SidebarData = [
         ]
     },
     {
-        title: 'Display Items',
-        path: '/items',
-        icon: <FaIcons.FaProductHunt />,
-        iconOpen: <RiIcons.RiArrowUpSFill />,
-        iconClosed: <RiIcons.RiArrowDownSFill />,
-        subNav: [
-            {
-                title: 'Add Item',
-                path: '/items/add-item',
-                icon: <IoIcons.IoIosAddCircle />
-            }
-        ] 
-    },
-    {
         title: 'Display Orders',
         path: '/orders',
         icon: <RiIcons.RiShoppingBasket2Fill />,
@@ -111,6 +92,11 @@ const SidebarData = [
                 title: 'Transfer Order',
                 path: '/orders/transfer-order',
                 icon: <BiIcons.BiTransfer />
+            },
+            {
+                title: 'Purchase Order',
+                path: '/orders/purchase-order',
+                icon: <FaIcons.FaShoppingCart />
             }
         ]
     },

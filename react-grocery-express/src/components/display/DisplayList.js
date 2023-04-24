@@ -52,10 +52,11 @@ const DisplayList = ({
 }) => {
   const navigate = useNavigate();
   
-  const handleOnDeleteClick = (index) => {
+  const handleOnDeleteClick = (item, index) => {
     alert(`Removed item: ${index}`);
+    console.log(index)
     setItems(items.filter((item, idx) => idx !== index));
-    onDelete(index);
+    onDelete(item);
   };
 
   console.log(items)
@@ -69,7 +70,7 @@ const DisplayList = ({
               <DisplayListItem key={index}>{item[objectKey]}</DisplayListItem>
               <AiIcons.AiFillDelete
                 onClick={() => {
-                  handleOnDeleteClick(item);
+                  handleOnDeleteClick(item, index);
                 }}
               />
               <AiIcons.AiFillEdit

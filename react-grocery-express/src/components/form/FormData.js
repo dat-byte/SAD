@@ -6,7 +6,8 @@ const FormData = {
       "Last Name",
       "Phone Number",
       "Credit",
-      "Address"
+      "Rating (Integer)",
+      "Address (Integer)"
     ],
     formData: {
       account_id: "",
@@ -14,9 +15,10 @@ const FormData = {
       last_name: "",
       phone_number: "",
       credit: "",
+      rating: "",
       address: ""
     },
-    input: ["account_id", "first_name", "last_name", "phone_number", "credit", "address"]
+    input: ["account_id", "first_name", "last_name", "phone_number", "credit", "rating", "address"]
   },
   employee: {
     placeholder: [
@@ -26,7 +28,7 @@ const FormData = {
       "Phone Number",
       "TAX ID",
       "License ID",
-      "Experience",
+      "Experience (Integer)",
     ],
     formData: {
       account_id: "",
@@ -34,7 +36,7 @@ const FormData = {
       last_name: "",
       phone_number: "",
       tax_id: "",
-      licencse_id: "",
+      license_id: "",
       experience: "",
     },
     input: [
@@ -43,7 +45,7 @@ const FormData = {
       "last_name",
       "phone_number",
       "tax_id",
-      "licencse_id",
+      "license_id",
       "experience",
     ],
   },
@@ -54,7 +56,7 @@ const FormData = {
       "Spending Tier 1",
       "Spending Tier 2",
       "Spending Tier 3",
-      "Address"
+      "Address (Integer)"
     ],
     formData: {
       store_id: "",
@@ -77,16 +79,16 @@ const FormData = {
     placeholder: [
       "Drone ID",
       "Weight Capacity",
-      "Remaining Flights",
+      "Fuel",
       "Max Fuel",
-      "Select: Make Refueling Drone",
+      "Make Refueling Drone (true or false)",
       "Select Store",
       "Select Employee",
     ],
     formData: {
       drone_id: "",
       weight_cap: "",
-      remaining_flights: "",
+      fuel: "",
       max_fuel: "",
       make_refuel_drone: "",
       store_id: "",
@@ -95,7 +97,7 @@ const FormData = {
     input: [
       "drone_id",
       "weight_cap",
-      "remaining_flights",
+      "fuel",
       "max_fuel",
       "make_refuel_drone",
       "store_id",
@@ -161,7 +163,7 @@ const FormData = {
       "Select Store",
       "Select Order",
       "Select Item",
-      "Quantity (Whole Number)",
+      "Quantity (Integer)",
       "Unit Price",
     ],
     formData: {
@@ -187,6 +189,17 @@ const FormData = {
         store_id: ""
     },
     input: ['coupon_id', 'discount', 'expiration', 'store_id']
+  },
+  "purchase-order": {
+    placeholder: [
+      'Store ID',
+      'Order ID'
+    ],
+    formData: {
+      store_id: "",
+      order_id: ""
+    },
+    input: ['store_id', 'order_id']
   }
 };
 

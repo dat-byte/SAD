@@ -4,11 +4,11 @@ import useGetRequest from "../components/api/useGetRequest";
 
 export const DisplayEmployee = () => {
   const [items, setItems] = useState([]);
-  useGetRequest('employee/employees', setItems)
+  useGetRequest('employee/get-employees', setItems)
   
   const onDelete = (e) => {
     console.log(e)
-    fetch(`/employee/delete/${e.account_id}`, {
+    fetch(`/employee/delete/${e.account_id}/${e.license_id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -27,7 +27,7 @@ export const DisplayEmployee = () => {
           objectKey={"account_id"}
           items={items}
           setItems={setItems}
-          editPath={"/employee/edit-customer"}
+          editPath={"/employees/edit-employee"}
           onDelete={onDelete}
         />
       )}

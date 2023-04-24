@@ -5,18 +5,20 @@ import useGetRequest from "../components/api/useGetRequest";
 
 export const DisplayCustomer = () => {
   const [items, setItems] = useState([]);
-  useGetRequest('customer/customers', setItems)
+  useGetRequest('/customer/get-customers', setItems)
+  console.log(items)
   
   const onDelete = (e) => {
     console.log(e)
+    console.log(JSON.stringify(items))
     fetch(`/customer/delete/${e.account_id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify(items),
+      body: items,
     }).then((response) => {
-      response.ok ? console.log(response.json()) : console.log(response);
+      response.ok ? console.log(response) : console.log(response);
     });
   };
 

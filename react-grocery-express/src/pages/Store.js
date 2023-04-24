@@ -5,7 +5,7 @@ import useGetRequest from "../components/api/useGetRequest";
 
 export const DisplayStore = () => {
   const [items, setItems] = useState([]);
-  useGetRequest('store/stores', setItems)
+  useGetRequest('store/get-stores', setItems)
   
   const onDelete = (e) => {
     console.log(e)
