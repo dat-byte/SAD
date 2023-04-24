@@ -27,11 +27,6 @@ const SidebarData = [
                 path: '/customers/add-customer',
                 icon: <BsIcons.BsPersonFillAdd />
             },
-            {
-                title: 'Edit Customer',
-                path: '/customers/edit-customer',
-                icon: <AiIcons.AiFillEdit />
-            }
         ]
     },
     {
@@ -46,11 +41,6 @@ const SidebarData = [
                 path: '/employees/add-employee',
                 icon: <BsIcons.BsPersonFillAdd />
             },
-            {
-                title: 'Edit Employee',
-                path: '/employees/edit-employee',
-                icon: <AiIcons.AiFillEdit />
-            }
         ]
     },
     {
@@ -65,11 +55,6 @@ const SidebarData = [
                 path: '/stores/add-store',
                 icon: <IoIcons.IoIosAddCircle />
             },
-            {
-                title: 'Edit Store',
-                path: '/stores/edit-store',
-                icon: <AiIcons.AiFillEdit />
-            }
         ]
     },
     {
@@ -83,11 +68,6 @@ const SidebarData = [
                 title: 'Add Drone',
                 path: '/drones/add-drone',
                 icon: <IoIcons.IoIosAddCircle />
-            },
-            {
-                title: 'Edit Store',
-                path: '/drones/edit-drone',
-                icon: <AiIcons.AiFillEdit />
             },
             {
                 title: 'Send Refueling Drone',
@@ -107,11 +87,6 @@ const SidebarData = [
                 title: 'Add Item',
                 path: '/items/add-item',
                 icon: <IoIcons.IoIosAddCircle />
-            },
-            {
-                title: 'Edit Item',
-                path: '/items/edit-item',
-                icon: <AiIcons.AiFillEdit />
             }
         ] 
     },
@@ -126,11 +101,6 @@ const SidebarData = [
                 title: 'Add Order',
                 path: '/orders/add-order',
                 icon: <IoIcons.IoIosAddCircle />
-            },
-            {
-                title: 'Edit Order',
-                path: '/orders/edit-order',
-                icon: <AiIcons.AiFillEdit />
             },
             {
                 title: 'Add Items to Order',
@@ -155,11 +125,6 @@ const SidebarData = [
                 title: 'Add Coupons',
                 path: '/coupons/add-coupon',
                 icon: <IoIcons.IoIosAddCircle />
-            },
-            {
-                title: 'Edit Coupon',
-                path: '/coupons/edit-coupon',
-                icon: <AiIcons.AiFillEdit />
             }
         ] 
     }

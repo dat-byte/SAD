@@ -29,7 +29,6 @@ export const DisplayCustomer = () => {
           items={items}
           setItems={setItems}
           editPath={"/customers/edit-customer"}
-          deleteEndpoint={"customers/delete/"}
           onDelete={onDelete}
         />
       )}

@@ -6,7 +6,7 @@ const useGetRequest = (apiEndpoint, setData) => {
     const fetchApi = async () => {
       const response = await fetch(apiEndpoint)
       const data = await response.json()
-      setData(data)
+      setData(response.ok ? data : [])
     }
     fetchApi()
   }, [])

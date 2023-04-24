@@ -48,7 +48,6 @@ const DisplayList = ({
   objectKey,
   setItems,
   editPath,
-  deleteEndpoint,
   onDelete,
 }) => {
   const navigate = useNavigate();
@@ -59,11 +58,12 @@ const DisplayList = ({
     onDelete(index);
   };
 
+  console.log(items)
   return (
     <DisplayContainer>
       <h2>{title}</h2>
       <DisplayUlContainer>
-        {items.map((item, index) => {
+        { items && items.map((item, index) => {
           return (
             <DisplayListItemContainer key={index}>
               <DisplayListItem key={index}>{item[objectKey]}</DisplayListItem>
