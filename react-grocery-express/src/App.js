@@ -155,7 +155,7 @@ function App() {
           path="/orders/add-item-to-order"
           exact
           element={
-            <TextForm title={"Add To Order"} controller={'order'} objectKey={"add-item-to-order"} />
+            <TextForm title={"Add Items to Order"} controller={'order'} objectKey={"add-item-to-order"} />
           }
         />
         <Route

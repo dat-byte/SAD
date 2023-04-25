@@ -12,16 +12,24 @@ const TextForm = ({ title, controller, objectKey, onSubmit }) => {
   );
 
   const handleSubmit = (e) => {
-    const endPoint = title.includes('Add') ? `/${controller}/make` : `/${controller}/edit`
+  var endPoint = title.includes('Add') ? `/${controller}/make` : `/${controller}/edit`
+    if (title === "Add Items to Order")
+      endPoint= '/order/request'
+    
+    if (title === "Transfer Order")
+      endPoint = '/order/transfer_order'
+    
+    if (title === "Purchase Order")
+      endPoint = '/order/purchase'
+
     console.log(`End Point for ${title}: ${endPoint}`)
-    console.log(values)
-    console.log(`bject key --> ${FormData[objectKey].input[3]}`)
     PostRequest(endPoint, values, navigate, "Saved Info")
   };
 
   const handleFormChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
 
   return (
     <div className="home">
@@ -35,6 +43,7 @@ const TextForm = ({ title, controller, objectKey, onSubmit }) => {
               name={FormData[objectKey].input[index]}
               onChange={handleFormChange}
               value={values[FormData[objectKey].input[index]]}
+              title={title}
             />
           );
         })}

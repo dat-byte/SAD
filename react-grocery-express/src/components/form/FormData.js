@@ -120,6 +120,7 @@ const FormData = {
       "Select Drone",
       "Order ID",
       "Distance for Deliver",
+      "Use Coupon (true or false)"
     ],
     formData: {
       store_id: "",
@@ -127,6 +128,7 @@ const FormData = {
       drone_id: "",
       order_id: "",
       distance_to_deliver: "",
+      isCouponApplied: "",
     },
     input: [
       "store_id",
@@ -134,6 +136,7 @@ const FormData = {
       "drone_id",
       "order_id",
       "distance_to_deliver",
+      "isCouponApplied"
     ],
   },
   "send-refueling-drone": {
@@ -154,9 +157,9 @@ const FormData = {
     formData: {
       store_id: "",
       order_id: "",
-      drone_id: "",
+      new_drone_id: "",
     },
-    input: ["store_id", "order_id", "drone_id"],
+    input: ["store_id", "order_id", "new_drone_id"],
   },
   "add-item-to-order": {
     placeholder: [
@@ -171,9 +174,9 @@ const FormData = {
       order_id: "",
       item_name: "",
       quantity: "",
-      price: "",
+      unit_price: "",
     },
-    input: ["store_id", "order_id", "item_name", "quantity", "price"],
+    input: ["store_id", "order_id", "item_name", "quantity", "unit_price"],
   },
   coupon: {
     placeholder: [

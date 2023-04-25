@@ -1,4 +1,7 @@
 const PostRequest = (apiEndPoint, data, navigate, message, handleData) => {
+  console.log(`apiEndpoint: ${apiEndPoint}`);
+  console.log(`data being: ${data}`);
+  
   fetch(apiEndPoint, {
     method: "POST",
     headers: {
