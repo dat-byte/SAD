@@ -8,7 +8,6 @@ import DisplayEmployee from "./pages/Employee";
 import DisplayDrone from "./pages/Drone";
 import DisplayOrder from "./pages/Order";
 import TextForm from "./components/form/TextForm";
-import { useEffect } from "react";
 
 function App() {
   return (
