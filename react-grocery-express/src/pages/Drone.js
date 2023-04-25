@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import DisplayList from "../components/display/DisplayList";
-import useGetRequest from "../components/api/useGetRequest";
 import DroneSumbitID from "../components/form/DroneSubmitID";
 import PostRequest from "../components/api/PostRequest";
 
