@@ -1,39 +1,41 @@
-import React, { useState } from 'react'
-import DisplayList from '../components/display/DisplayList'
-import useGetRequest from "../components/api/useGetRequest";
-
+import React, { useState } from "react";
+import DisplayList from "../components/display/DisplayList";
+import SubmitID from "../components/form/SubmitID";
+import PostRequest from "../components/api/PostRequest";
 
 export const DisplayOrder = () => {
+  const [storeID, setStore] = useState("");
   const [items, setItems] = useState([]);
-  useGetRequest('order/orders', setItems)
-  
+
   const onDelete = (e) => {
-    console.log(e)
-    fetch(`/order/delete/${e.order_id}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(items),
-    }).then((response) => {
-      response.ok ? console.log(response.json()) : console.log(response);
-    });
+    PostRequest(
+      "item/delete",
+      { ...items, store_id: storeID },
+      null,
+      "Deleted order",
+      null
+    );
   };
   return (
     <div>
-    {items && (
-      <DisplayList
-        title={"Display Orders"}
-        objectKey={"order_id"}
-        items={items}
-        setItems={setItems}
-        editPath={"/orders/edit-order"}
-        onDelete={onDelete}
+      <SubmitID
+        keyIdName={"store_id"}
+        setData={setItems}
+        endPoint={"order/get-orders"}
+        setId={setStore}
       />
-    )}
-  </div>
-  )
-}
+      {items && (
+        <DisplayList
+          title={"Display Orders"}
+          objectKey={"order_id"}
+          items={items}
+          setItems={setItems}
+          editPath={"/orders/edit-order"}
+          onDelete={onDelete}
+        />
+      )}
+    </div>
+  );
+};
 
 export default DisplayOrder;
-

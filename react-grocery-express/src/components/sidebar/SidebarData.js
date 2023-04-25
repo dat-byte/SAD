@@ -72,6 +72,20 @@ const SidebarData = [
         ]
     },
     {
+        title: 'Display Items',
+        path: '/items',
+        icon: <FaIcons.FaProductHunt />,
+        iconOpen: <RiIcons.RiArrowUpSFill />,
+        iconClosed: <RiIcons.RiArrowDownSFill />,
+        subNav: [
+            {
+                title: 'Add Item',
+                path: '/items/add-item',
+                icon: <IoIcons.IoIosAddCircle />
+            }
+        ] 
+    },
+    {
         title: 'Display Orders',
         path: '/orders',
         icon: <RiIcons.RiShoppingBasket2Fill />,

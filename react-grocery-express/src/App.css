@@ -47,3 +47,10 @@
   opacity: 1;
   transition: 0s
 }
+
+
+.submitID {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

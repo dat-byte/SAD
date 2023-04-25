@@ -1,50 +1,31 @@
-import React, { useState } from 'react'
-import DisplayList from '../components/display/DisplayList'
-import useGetRequest from "../components/api/useGetRequest";
+import React, { useState } from "react";
+import DisplayList from "../components/display/DisplayList";
+import PostRequest from "../components/api/PostRequest";
+import SubmitID from "../components/form/SubmitID";
 
 export const DisplayItem = () => {
   const [items, setItems] = useState([]);
-  
-  const onDelete = (e) => {
-    console.log(e)
-    fetch(`/item/delete/${e.item_name}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(items),
-    }).then((response) => {
-      response.ok ? console.log(response.json()) : console.log(response);
-    });
-  }; 
-
   const [storeID, setStore] = useState("");
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetch(`/item/get-items/${storeID}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      }
-    }).then((response) => {
-        console.log(response)
-        setItems(response)
-    });
-    alert(`The store you entered was: ${storeID}`)
-  }
+
+  const onDelete = (item, index) => {
+    // notifying of the deletion
+    PostRequest(
+      "item/delete",
+      { ...item, store_id: storeID },
+      null,
+      "Deleted item",
+      null
+    );
+  };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-      <label>Enter store ID:
-        <input 
-          type="text" 
-          value={storeID}
-          onChange={(e) => setStore(e.target.value)}
-        />
-      </label>
-      <input type="submit" />
-    </form>
+      <SubmitID
+        keyIdName={"store_id"}
+        setData={setItems}
+        endPoint={"item/get-items"}
+        setId={setStore}
+      />
       {items && (
         <DisplayList
           title={"Display Items"}
@@ -56,8 +37,7 @@ export const DisplayItem = () => {
         />
       )}
     </div>
-  )
-}
+  );
+};
 
 export default DisplayItem;
-

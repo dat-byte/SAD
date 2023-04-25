@@ -56,13 +56,13 @@ const DisplayList = ({
     alert(`Removed item: ${index}`);
     console.log(index)
     setItems(items.filter((item, idx) => idx !== index));
-    onDelete(item);
+    onDelete(item, index);
   };
 
   console.log(items)
   return (
     <DisplayContainer>
-      <h2>{title}</h2>
+      {items.length !== 0 && <h2>{title}</h2>}
       <DisplayUlContainer>
         { items && items.map((item, index) => {
           return (
